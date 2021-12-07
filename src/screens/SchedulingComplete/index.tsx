@@ -1,5 +1,10 @@
 import React from "react";
 import { StatusBar, useWindowDimensions } from "react-native";
+import {
+  NavigationProp,
+  ParamListBase,
+  useNavigation,
+} from "@react-navigation/native";
 
 import { ConfirmButton } from "../../components";
 
@@ -10,6 +15,11 @@ import * as S from "./styles";
 
 export function SchedulingComplete() {
   const { width } = useWindowDimensions();
+  const navigation = useNavigation<NavigationProp<ParamListBase>>();
+
+  function handleConfirm() {
+    navigation.navigate("Home");
+  }
 
   return (
     <S.Container>
@@ -33,7 +43,7 @@ export function SchedulingComplete() {
       </S.Content>
 
       <S.Footer>
-        <ConfirmButton title="OK" />
+        <ConfirmButton title="OK" onPress={handleConfirm} />
       </S.Footer>
     </S.Container>
   );

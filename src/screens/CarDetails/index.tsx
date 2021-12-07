@@ -1,4 +1,9 @@
 import React from "react";
+import {
+  NavigationProp,
+  ParamListBase,
+  useNavigation,
+} from "@react-navigation/native";
 
 import { Accessory, BackButton, Button, ImageSlider } from "../../components";
 
@@ -12,6 +17,12 @@ import peopleSvg from "../../assets/people.svg";
 import * as S from "./styles";
 
 export function CarDetails() {
+  const navigation = useNavigation<NavigationProp<ParamListBase>>();
+
+  function handleConfirmRental() {
+    navigation.navigate("Scheduling");
+  }
+
   return (
     <S.Container>
       <S.Header>
@@ -53,16 +64,13 @@ export function CarDetails() {
           indultado na praça Real Maestranza de Sevilla. É um belíssimo carro
           para quem gosta de acelerar.
         </S.About>
-
-        <S.About>
-          Este é um automóvel desportivo. Surgiu do lendário touro de lide
-          indultado na praça Real Maestranza de Sevilla. É um belíssimo carro
-          para quem gosta de acelerar.
-        </S.About>
       </S.Content>
 
       <S.Footer>
-        <Button title="Confirmar agendamento" />
+        <Button
+          title="Escolher período do aluguel"
+          onPress={handleConfirmRental}
+        />
       </S.Footer>
     </S.Container>
   );
