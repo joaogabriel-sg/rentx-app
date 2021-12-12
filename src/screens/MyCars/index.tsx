@@ -8,7 +8,7 @@ import {
   useNavigation,
 } from "@react-navigation/native";
 
-import { BackButton, Car, Load } from "../../components";
+import { BackButton, Car, LoadAnimation } from "../../components";
 
 import { api } from "../../services";
 
@@ -70,7 +70,7 @@ export function MyCars() {
       </S.Header>
 
       {loading ? (
-        <Load />
+        <LoadAnimation />
       ) : (
         <S.Content>
           <S.Appointments>

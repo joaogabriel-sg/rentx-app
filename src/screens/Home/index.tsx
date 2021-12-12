@@ -16,7 +16,7 @@ import Animated, {
   withSpring,
 } from "react-native-reanimated";
 
-import { Car, Load } from "../../components";
+import { Car, LoadAnimation } from "../../components";
 
 import Logo from "../../assets/logo.svg";
 
@@ -104,7 +104,7 @@ export function Home() {
       </S.Header>
 
       {loading ? (
-        <Load />
+        <LoadAnimation />
       ) : (
         <S.CarList
           data={cars}

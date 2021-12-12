@@ -6,3 +6,4 @@ export * from "./Car";
 export * from "./ConfirmButton";
 export * from "./ImageSlider";
 export * from "./Load";
+export * from "./LoadAnimation";
