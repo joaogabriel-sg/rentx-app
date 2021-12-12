@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StatusBar, StyleSheet } from "react-native";
+import { BackHandler, StatusBar, StyleSheet } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import {
   NavigationProp,
@@ -83,6 +83,10 @@ export function Home() {
 
     fetchCars();
   }, []);
+
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", () => true);
+  });
 
   return (
     <S.Container>

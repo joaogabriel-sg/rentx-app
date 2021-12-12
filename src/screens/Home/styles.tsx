@@ -39,5 +39,5 @@ export const CarList = styled(
   contentContainerStyle: {
     padding: 24,
   },
-  showVerticalScrollIndicator: false,
+  showsVerticalScrollIndicator: false,
 })``;
