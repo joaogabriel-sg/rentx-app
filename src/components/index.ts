@@ -5,5 +5,7 @@ export * from "./Calendar";
 export * from "./Car";
 export * from "./ConfirmButton";
 export * from "./ImageSlider";
+export * from "./Input";
 export * from "./Load";
 export * from "./LoadAnimation";
+export * from "./PasswordInput";
