@@ -1,5 +1,6 @@
 export * from "./Accessory";
 export * from "./BackButton";
+export * from "./Bullet";
 export * from "./Button";
 export * from "./Calendar";
 export * from "./Car";

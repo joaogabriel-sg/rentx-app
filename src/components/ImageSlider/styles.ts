@@ -2,10 +2,6 @@ import styled from "styled-components/native";
 import { Dimensions } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
-interface ImageIndexProps {
-  active: boolean;
-}
-
 export const Container = styled.View`
   width: 100%;
 `;
@@ -14,16 +10,6 @@ export const ImageIndexes = styled.View`
   padding-right: 24px;
   flex-direction: row;
   align-self: flex-end;
-`;
-
-export const ImageIndex = styled.View<ImageIndexProps>`
-  background: ${({ theme, active }) =>
-    active ? theme.colors.title : theme.colors.shape};
-  width: 6px;
-  height: 6px;
-
-  border-radius: 3px;
-  margin-left: 8px;
 `;
 
 export const CarImageWrapper = styled.View`
