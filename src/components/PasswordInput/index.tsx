@@ -44,6 +44,7 @@ export function PasswordInput({ iconName, value, ...rest }: Props) {
       </S.IconContainer>
 
       <S.InputText
+        autoCorrect={false}
         secureTextEntry={isPasswordVisible}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
