@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 import {
@@ -12,6 +12,8 @@ import { BackButton } from "../../components";
 import * as S from "./styles";
 
 export function Profile() {
+  const [option, setOption] = useState<"dataEdit" | "passwordEdit">("dataEdit");
+
   const theme = useTheme();
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
 
@@ -20,6 +22,10 @@ export function Profile() {
   }
 
   function handleSignOut() {}
+
+  function handleOptionChange(optionSelected: "dataEdit" | "passwordEdit") {
+    setOption(optionSelected);
+  }
 
   return (
     <S.Container>
@@ -39,6 +45,25 @@ export function Profile() {
           </S.PhotoButton>
         </S.PhotoContainer>
       </S.Header>
+
+      <S.Content>
+        <S.Options>
+          <S.Option
+            active={option === "dataEdit"}
+            onPress={() => handleOptionChange("dataEdit")}
+          >
+            <S.OptionTitle active={option === "dataEdit"}>Dados</S.OptionTitle>
+          </S.Option>
+          <S.Option
+            active={option === "passwordEdit"}
+            onPress={() => handleOptionChange("passwordEdit")}
+          >
+            <S.OptionTitle active={option === "passwordEdit"}>
+              Trocar senha
+            </S.OptionTitle>
+          </S.Option>
+        </S.Options>
+      </S.Content>
     </S.Container>
   );
 }
