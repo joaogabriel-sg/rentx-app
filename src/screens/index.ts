@@ -1,6 +1,7 @@
 export * from "./CarDetails";
 export * from "./Home";
 export * from "./MyCars";
+export * from "./Profile";
 export * from "./Scheduling";
 export * from "./Confirmation";
 export * from "./SchedulingDetails";
