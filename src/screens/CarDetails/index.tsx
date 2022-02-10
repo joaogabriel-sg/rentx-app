@@ -15,6 +15,7 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
 } from "react-native-reanimated";
+import { RFValue } from "react-native-responsive-fontsize";
 
 import { Accessory, BackButton, Button, ImageSlider } from "../../components";
 
@@ -22,7 +23,6 @@ import { getAccessoryIcon } from "../../utils";
 import { CarDTO } from "../../dtos";
 
 import * as S from "./styles";
-import { RFValue } from "react-native-responsive-fontsize";
 
 interface Params {
   car: CarDTO;
@@ -107,8 +107,8 @@ export function CarDetails() {
           </S.Description>
 
           <S.Rent>
-            <S.Period>{car.rent.period}</S.Period>
-            <S.Price>R$ {car.rent.price}</S.Price>
+            <S.Period>{car.period}</S.Period>
+            <S.Price>R$ {car.price}</S.Price>
           </S.Rent>
         </S.Details>
 

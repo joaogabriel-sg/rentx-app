@@ -14,6 +14,7 @@ import {
 } from "@expo-google-fonts/archivo";
 
 import { Routes } from "./src/routes";
+import { AppProvider } from "./src/hooks";
 
 import { theme } from "./src/styles";
 
@@ -32,7 +33,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Routes />
+      <AppProvider>
+        <Routes />
+      </AppProvider>
     </ThemeProvider>
   );
 }
